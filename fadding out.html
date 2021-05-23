@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="jquery-min.js"></script>
+    <style type="text/css">
+        #circle {
+            background-color: purple;
+            height: 200px;
+            width: 200px;
+            margin: 5px;
+            border-radius: 50%;
+            float: left;
+        }
+        .square {
+            background-color: rgb(159, 180, 102);
+            height: 200px;
+            width: 200px;
+            margin: 5px;
+            float: left;
+        }
+        
+        #clear {
+            clear: both;
+        }
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="circle"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div id="clear"></div>
+    <hr><br>
+    <p id="para">this text which is to be faded after you click on them Or click the fade out button. </p>
+    <button id="fadethis">FadeOut</button>
+    <button id="fadein">FadeIn</button>
+    <hr><br>
+    <p id="toggle_text"> this text can be fade out and fade in with same button</p>
+    <button id="toggle">toggle text</button>
+    <script type="text/javascript">
+    
+
+        $("div").click(function() {
+            $(this).fadeOut();
+        });
+       $("p").click(function() {
+           $(this).fadeOut("slow");
+       });
+       $("#fadethis").click(function() {
+           $("#para").fadeOut();
+       });
+       $("#fadein").click(function() {
+           $("#para").fadeIn();
+       });
+       $("#toggle").click(function() {
+            if ( $("#toggle_text").css("display") == "none" ) {    
+                $("#toggle_text").fadeIn();
+            } else {
+                $("#toggle_text").fadeOut();
+            }
+       });
+       
+    </script>
+</body>
+</html>

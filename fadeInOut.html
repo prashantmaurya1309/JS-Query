@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript" src="jquery-min.js"></script>
+
+    <style>
+        #dwe{
+            background-color: skyblue;
+            height: 150px;
+            width: 150px;
+            padding: 15px;
+            
+        }
+        #p1{
+            font-size: xx-large;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <p id="toggle_text"> this text can be fade out and fade in with same button</p>
+    <button id="toggle">toggle text</button>
+
+
+    <script type="text/javascript">
+
+        if(typeof jQuery==undefined){
+            alert("problem with jQuery!!")
+        }
+        
+        $("#toggle").click(function() {
+            if ( $("#toggle_text").css("display") == "none" ) {    
+                $("#toggle_text").fadeIn();
+            } else {
+                $("#toggle_text").fadeOut();
+            }
+       });
+        
+        
+
+
+    </script>
+
+    
+</body>
+</html>

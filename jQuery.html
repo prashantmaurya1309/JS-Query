@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        #circle{
+            background-color: darkolivegreen;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            float: left;
+            margin-left: 50px;
+            margin-right: 50px;
+            
+        }
+        .sq{
+            background-color: deepskyblue;
+            border-radius: 0%;
+            width: 200px;
+            height: 200px;
+            float: left;
+            margin-right: 50px;
+
+        }
+        #c-txt{
+            padding: 30px;
+            align-items: center;
+            color:ghostwhite;
+
+        }
+        #s-txt{
+            padding: 30px;
+            align-items: center;
+            color:purple;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div id="circle"><p id="c-txt"></p></div>
+    <div class="sq"><p id="s-txt"></p></div>
+    <div class="sq"><iframe src="http://www.covid19india.org" frameborder="0"></iframe></div>
+
+
+    <script>
+
+        if(typeof jQuery =="undefined"){
+            console.log("not installed")
+        }
+        else{
+            
+            console.log("installed corectly")
+        }
+
+        let cClicked=0;
+        let sqClicked=0;
+
+        $("#circle").click(()=>{
+            cClicked+=1;
+            console.log(cClicked+ " times clicked")
+            $("#c-txt").html("circle is clicked <h2>" + cClicked+ "</h2> times")
+        })
+
+        $(".sq").hover(()=>{
+            sqClicked+=1;
+            $("#s-txt").html("hovered <h1>"+sqClicked+"</h1> times")
+            //$("iframe").attr("src" , "http://www.google.com");
+            if(sqClicked>20){
+                console.clear();
+                sqClicked=0;
+                cClicked=0;
+            }
+            
+        })
+        
+        
+
+    </script>
+    
+</body>
+</html>
